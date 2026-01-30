@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+script-src 'unsafe-inline' https://*.paypal.com https://*.paypalobjects.com;
+style-src 'unsafe-inline' https://*.paypal.com https://*.paypalobjects.com; connect-src
+https://*.paypal.com https://*.paypalobjects.com; frame-src https://*.paypal.com; img-src
+https://*.paypal.com https://*.paypalobjects.com; font-src https://*.paypalobjects.com">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous"
+        href="https://www.paypalobjects.com/paypal-ui/fonts/PayPalPlain-Regular.woff2">
+    <style type="text/css">
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 48px;
+            font-family: PayPalPlain-Regular, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        #cart-container {
+            width: 400px;
+            background-color: #f5f7fb;
+            border-radius: .75rem;
+            box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .15);
+            font-weight: bold;
+            line-height: 1.15;
+        }
+
+        #header {
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            border-radius: .75rem .75rem 0 0;
+            background-color: #7a4b95;
+            color: white;
+            font-size: larger;
+        }
+
+        #view-cart-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 48px 24px 48px;
+        }
+
+        #add-to-cart-container {
+            padding: 0 48px 0 48px;
+        }
+
+        .addToCartButtonContainer {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" media="screen"
+        href="https://www.paypalobjects.com/paypal-ui/web/fonts-and-normalize/3-0-0/fonts-and-normalize.min.css">
+    <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="JCWXDQWBZFWL8"></script>
+</head>
+
+<body>
+    <div id="cart-container">
+        <div id="header">Rock Spring Family Fun Night</div>
+        <div id="add-to-cart-container">
+            <paypal-add-to-cart-button data-id="QRLSAPN6BQFJQ"></paypal-add-to-cart-button>
+            <paypal-add-to-cart-button data-id="GTZX8RXC3E8R4"></paypal-add-to-cart-button>
+        </div>
+        <div id="view-cart-container">
+            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        cartPaypal.Cart({ id: "pp-view-cart" })
+        cartPaypal.AddToCart({ id: "GTZX8RXC3E8R4" })
+        cartPaypal.AddToCart({ id: "QRLSAPN6BQFJQ" })
+    </script>
+</body>
+
+</html>
